@@ -70,7 +70,7 @@ while True:
     # Доведение суммы до 1
     while sum(list_of_alpha) > 1:
         for i in range(n):
-            if list_of_alpha[i] == max(list_of_alpha):
+            if list_of_alpha[i] == min(list_of_alpha):
                 list_of_alpha[i] -= 0.01
     while sum(list_of_alpha) < 1:
         for i in range(n):

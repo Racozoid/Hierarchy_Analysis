@@ -67,15 +67,20 @@ while True:
     for i in range(n):
         list_of_alpha.append(math.floor((list_of_sum[i]/sum(list_of_sum)) * 100) / 100)
 
+    # Сумма весовых коэффициентов и ее округление до двух знаков
+    sum_of_alphas = round(sum(list_of_alpha), 2)
+
     # Доведение суммы до 1
-    while sum(list_of_alpha) > 1:
+    while sum_of_alphas > 1:
         for i in range(n):
             if list_of_alpha[i] == min(list_of_alpha):
                 list_of_alpha[i] -= 0.01
-    while sum(list_of_alpha) < 1:
+        sum_of_alphas = round(sum(list_of_alpha), 2)
+    while sum_of_alphas < 1:
         for i in range(n):
             if list_of_alpha[i] == max(list_of_alpha):
                 list_of_alpha[i] += 0.01
+        sum_of_alphas = round(sum(list_of_alpha), 2)
 
     # Вывод таблицы
     print('\nТаблица попарного сравнения')
